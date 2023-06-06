@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class AmenityProperty extends Model
+{
+    use HasFactory;
+
+    public function getAmenityName(){
+        return $this->belongsTo(Amenity::class, 'amenity_id', 'id');
+    }
+}
