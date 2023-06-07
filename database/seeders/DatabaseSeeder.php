@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\BlogPost;
+use App\Models\MassageTopicForUser;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -40,6 +41,9 @@ class DatabaseSeeder extends Seeder
             BlogPostSeeder::class,
             BlogPostImageSeeder::class,
             PropertyFrontendTextSeeder::class,
+            ContactSeeder::class,
+            ContactOfficeLocationSeeder::class,
+            MassageTopicForUserSeeder::class,
         ]);
     }
 }

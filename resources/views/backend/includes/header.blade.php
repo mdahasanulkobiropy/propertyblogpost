@@ -339,6 +339,8 @@
                     </li>
                     <li><a class="dropdown-item" href="javascript:;"><i class='bx bx-dollar-circle'></i><span>Earnings</span></a>
                     </li> --}}
+                    <li><a href="{{route('admin.message.user')}}" class="dropdown-item" href="javascript:;"><span>All Massage To Admin</span></a>
+                    </li>
                     <li><a href="{{route('admin.allmassage')}}" class="dropdown-item" href="javascript:;"><span>All Massage To Agent</span></a>
                     </li>
                     <li><a href="{{route('admin.confirmagentstatus')}}" class="dropdown-item" href="javascript:;"><span>Approve Agent</span></a>

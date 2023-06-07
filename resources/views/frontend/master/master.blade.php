@@ -7,19 +7,15 @@
 
         @include('frontend.includes.header')
 
-            @yield('content')
-
+        @yield('content')
 
         @include('frontend.includes.footer')
 
-        @include('frontend.includes.script')
-
-
         @include('frontend.includes.login')
-        
+
         @include('frontend.includes.register')
 
-
+        @include('frontend.includes.script')
 
     </body>
 </html>

@@ -3,6 +3,14 @@
 <script src="{{asset('frontend/assets')}}/js/bootstrap.min.js"></script>
 <script src="{{asset('frontend/assets')}}/js/isotope.min.js"></script>
 <script src="{{asset('frontend/assets')}}/js/owl.carousel.min.js"></script>
+<script src="{{asset('frontend/assets')}}/js/photoswipe.min.js"></script>
+<script src="{{asset('frontend/assets')}}/js/photoswipe-ui-default.min.js"></script>
+
+<script src="{{asset('frontend/assets')}}/js/jquery.sticky.js"></script>
+<script src="{{asset('frontend/assets')}}/js/gallery.js"></script>
+<script src="{{asset('frontend/assets')}}/js/infobox.js"></script>
+
+
 <script src="{{asset('frontend/assets')}}/js/main.js"></script>
 <script>
     $.ajaxSetup({
@@ -180,6 +188,47 @@
 
             });
 
+        })
+
+        ////////////////////////////////////////////////////////
+                ///// Massage to Admin from user  /////
+        ////////////////////////////////////////////////////////
+
+        $(document).on('click', '#pxp-contact-form-btn', function(){
+            // alert('ok');
+            let name =$('#pxp-contact-form-name').val();
+            // alert(name);
+            let email =$('#pxp-contact-form-email').val();
+            // alert(email);
+            let topic_id =$('#pxp-contact-form-reg').val();
+            // alert(topic_id);
+            let phone =$('#pxp-contact-form-phone').val();
+            // alert(phone);
+            let message =$('#pxp-contact-form-message').val();
+            // alert(message);
+
+
+            $.ajax({
+                url : "{{route('user.massage.admin')}}",
+                method :'POST',
+                data: {
+                    name     : name,
+                    email    : email,
+                    topic_id : topic_id,
+                    phone    : phone,
+                    message  : message,
+
+                } ,
+                success:function(res){
+                    $('#massagefromusertoadmin').html(res.success).delay(2000).fadeOut(400);
+                    $('#pxp-contact-form-name').val('');
+                    $('#pxp-contact-form-email').val('');
+                    $('#pxp-contact-form-reg').val('');
+                    $('#pxp-contact-form-phone').val('');
+                    $('#pxp-contact-form-message').val('');
+
+                }
+            });
         })
 
     });

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{asset('frontend/assets')}}/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('frontend/assets')}}/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{asset('frontend/assets')}}/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{asset('frontend/assets')}}/css/photoswipe.css">
+    <link rel="stylesheet" href="{{asset('frontend/assets')}}/css/default-skin/default-skin.css">
     <link rel="stylesheet" href="{{asset('frontend/assets')}}/css/style.css">
     <title>Logo.</title>
 </head>

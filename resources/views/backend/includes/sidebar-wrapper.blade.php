@@ -155,6 +155,21 @@
 						</li>
 					</ul>
 				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="bx bx-category"></i>
+						</div>
+						<div class="menu-title">Contact Page Element</div>
+					</a>
+					<ul>
+                        <li> <a href="{{route('admin.contact')}}"><i class="bx bx-right-arrow-alt"></i>Contact Text</a>
+						</li>
+                        <li> <a href="{{route('admin.contact.location')}}"><i class="bx bx-right-arrow-alt"></i>Add Office Location</a>
+						</li>
+                        <li> <a href="{{route('admin.contact.topic')}}"><i class="bx bx-right-arrow-alt"></i>Add Massage Topic</a>
+						</li>
+					</ul>
+				</li>
 
 			</ul>
 			<!--end navigation-->

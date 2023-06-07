@@ -11,11 +11,15 @@ use App\Http\Controllers\BlogPostTextController;
 use App\Http\Controllers\BlogTagController;
 use App\Http\Controllers\ChooseController;
 use App\Http\Controllers\ChooseItemController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactOfficeLocationController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\FeaturedController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\IndexAllTextController;
 use App\Http\Controllers\IndexSearchController;
+use App\Http\Controllers\MassageFromUserToAdminController;
+use App\Http\Controllers\MassageTopicForUserController;
 use App\Http\Controllers\PropertyBathroomController;
 use App\Http\Controllers\PropertyBedroomController;
 use App\Http\Controllers\PropertyController;
@@ -28,8 +32,7 @@ use App\Http\Controllers\SingleAgentMassageFromUserController;
 use App\Http\Controllers\SinglePostCommentController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\UserController;
-use App\Models\PropertyFrontendText;
-use App\Models\SingleAgentMassageFromUser;
+use App\Models\MassageFromUserToAdmin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -114,10 +117,18 @@ Route::middleware(['auth:sanctum','role:user', config('jetstream.auth_session'),
     Route::post('user/agent/apply/add', [AgentController::class, 'userbecomeagentapply'])->name('user.becomeagentapply');
 
     ////////////////////////////////
-    ///// My massage to Agent
+    ///// user massage to Agent
     //////////////////////////
 
-    Route::get('/user/massage', [SingleAgentMassageFromUserController::class, 'mymassage'])->name('user.mymassage');
+    Route::get('/user/massage/agent', [SingleAgentMassageFromUserController::class, 'mymassage'])->name('user.mymassage');
+
+
+    ////////////////////////////////
+    ///// user massage to Admin
+    ////////////////////////////////
+
+    Route::post('user/massage/admin', [MassageFromUserToAdminController::class, 'add'])->name('user.massage.admin');
+
 
 
 });
@@ -325,5 +336,41 @@ Route::middleware(['auth:sanctum','role:admin', config('jetstream.auth_session')
       ///allmassage
     ////////////////////////
     Route::get('/admin/massage/', [AgentController::class, 'allmassage'])->name('admin.allmassage');
+
+
+    //////////////////////////////////////
+    ////contact page
+    ///////////////////////////////////
+
+    Route::get('/admin/contact/', [ContactController::class, 'index'])->name('admin.contact');
+    Route::get('/admin/contact/edit/{id}', [ContactController::class, 'edit'])->name('admin.contact.edit');
+    Route::post('/admin/contact/update/{id}', [ContactController::class, 'update'])->name('admin.contact.update');
+
+    //////////////////////////////////////
+        ////contact office location page
+    ///////////////////////////////////
+
+    Route::get('/admin/contact/location', [ContactOfficeLocationController::class, 'index'])->name('admin.contact.location');
+    Route::post('/admin/contact/location/add', [ContactOfficeLocationController::class, 'add'])->name('admin.contact.location.add');
+    Route::get('/admin/contact/location/edit/{id}', [ContactOfficeLocationController::class, 'edit'])->name('admin.contact.location.edit');
+    Route::post('/admin/contact/location/update/{id}', [ContactOfficeLocationController::class, 'update'])->name('admin.contact.location.update');
+    Route::get('/admin/contact/location/delete/{id}', [ContactOfficeLocationController::class, 'delete'])->name('admin.contact.location.delete');
+
+    ///////////////////////////////////////////////////
+        ////contact office masssage Topic For User
+    ///////////////////////////////////////////////////
+
+    Route::get('/admin/contact/topic', [MassageTopicForUserController::class, 'index'])->name('admin.contact.topic');
+    Route::post('/admin/contact/topic/add', [MassageTopicForUserController::class, 'add'])->name('admin.contact.topic.add');
+    Route::get('/admin/contact/topic/edit/{id}', [MassageTopicForUserController::class, 'edit'])->name('admin.contact.topic.edit');
+    Route::post('/admin/contact/topic/update/{id}', [MassageTopicForUserController::class, 'update'])->name('admin.contact.topic.update');
+    Route::get('/admin/contact/topic/delete/{id}', [MassageTopicForUserController::class, 'delete'])->name('admin.contact.topic.delete');
+
+    ///////////////////////////////////////////////////
+        ////all  masssage to admin From User
+    ///////////////////////////////////////////////////
+
+    Route::get('/admin/massage/from/user', [MassageFromUserToAdminController::class, 'index'])->name('admin.message.user');
+
 
 });

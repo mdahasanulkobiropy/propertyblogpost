@@ -11,9 +11,12 @@ use App\Models\BlogPostText;
 use App\Models\BlogTag;
 use App\Models\Choose;
 use App\Models\ChooseItem;
+use App\Models\Contact;
+use App\Models\ContactOfficeLocation;
 use App\Models\Featured;
 use App\Models\IndexAllText;
 use App\Models\IndexSearch;
+use App\Models\MassageTopicForUser;
 use App\Models\Property;
 use App\Models\PropertyBathroom;
 use App\Models\PropertyBedroom;
@@ -154,7 +157,12 @@ class FrontendController extends Controller
     }
 
     public function contact(){
-        return view('frontend.pages.contact.contact');
+
+        $contact = Contact::all();
+        $office = ContactOfficeLocation::all();
+        $offices = ContactOfficeLocation::all();
+        $topics = MassageTopicForUser::all();
+        return view('frontend.pages.contact.contact', compact('contact', 'office', 'offices', 'topics'));
     }
 
 
