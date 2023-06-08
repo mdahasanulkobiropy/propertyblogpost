@@ -12,6 +12,11 @@
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('bedroom')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="bedroom" class="form-label">Bed Room Number</label>
                                     <input type="text" class="form-control" name="bedroom" value="{{$bedroom->bedroom}}" >
                                 </div>

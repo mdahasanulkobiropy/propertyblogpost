@@ -16,6 +16,15 @@ class ChooseItemController extends Controller
 
     public function add(Request $request){
 
+        $request->validate([
+            'title' => 'required',
+            'sub_title_part1' => 'required',
+            'sub_title_part2' => 'required',
+            'button_text' => 'required',
+            'image' => 'required',
+            'route' => 'required',
+        ]);
+
         $chooseitem = ChooseItem::create($request->except('_token')+['created_at' => Carbon::now()]);
 
         $image = $request->file('image');
@@ -37,6 +46,14 @@ class ChooseItemController extends Controller
     }
 
     public function update(Request $request, $id){
+
+        $request->validate([
+            'title' => 'required',
+            'sub_title_part1' => 'required',
+            'sub_title_part2' => 'required',
+            'button_text' => 'required',
+            'route' => 'required',
+        ]);
 
         $chooseitem=ChooseItem::find($id);
         $chooseitem->update($request->except('_token')+['created_at' => Carbon::now()]);

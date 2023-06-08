@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class AmenityController extends Controller
 {
-
     //Amenity index method
     public function index(){
 
@@ -19,6 +18,12 @@ class AmenityController extends Controller
 
     //Amenity add/store method
     public function add(Request $request){
+
+        $request->validate([
+            'title' => 'required|unique:amenities,title',
+            'icon_class' => 'required|unique:amenities,icon_class',
+        ]);
+
 
         $amenity = new Amenity();
 
@@ -40,6 +45,11 @@ class AmenityController extends Controller
 
    //Amenity update method
    public function update(Request $request, $id){
+
+        $request->validate([
+            'title' => 'required|unique:amenities,title,'. $id,
+            'icon_class' => 'required|unique:amenities,icon_class,'. $id,
+        ]);
 
         $amenity = Amenity::find($id);
 

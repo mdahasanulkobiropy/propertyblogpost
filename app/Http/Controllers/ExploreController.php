@@ -18,6 +18,10 @@ class ExploreController extends Controller
     //status store/add method
     public function add(Request $request){
 
+        $request->validate([
+            'title' => 'required|unique:explores,title',
+        ]);
+        
         $explore = new Explore();
 
         $explore->title = $request->title;
@@ -36,6 +40,11 @@ class ExploreController extends Controller
     }
 
     public function update(Request $request, $id){
+
+        $request->validate([
+            'title' => 'required|unique:explores,title,'. $id,
+        ]);
+
 
         $explore = Explore::find($id);
 

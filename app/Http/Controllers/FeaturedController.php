@@ -19,6 +19,10 @@ class FeaturedController extends Controller
 
     public function add(Request $request){
 
+        $request->validate([
+            'title' => 'required|unique:featureds,title',
+        ]);
+
         $featured = new Featured();
 
         $featured->title = $request->title;
@@ -28,6 +32,7 @@ class FeaturedController extends Controller
 
      //featured edit method
     public function edit($id){
+
         $featured = Featured::find($id);
         return view('backend.pages.featured.edit', compact('featured'));
     }
@@ -35,6 +40,10 @@ class FeaturedController extends Controller
      //featured update method
 
     public function update(Request $request,  $id){
+
+        $request->validate([
+            'title' => 'required|unique:featureds,title,'. $id,
+        ]);
 
         $featured = Featured::find($id);
 
@@ -50,7 +59,7 @@ class FeaturedController extends Controller
     public function delete($id){
 
         $featured = Featured::find($id);
-        
+
         $featured->delete();
 
         return to_route('admin.featured');

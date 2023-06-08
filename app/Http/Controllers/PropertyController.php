@@ -45,10 +45,31 @@ class PropertyController extends Controller
     }
 
 
-////////////////////////////////////////////
+    ////////////////////////////////////////////
     // method add for property
-////////////////////////////////////////////
+    ////////////////////////////////////////////
     public function add(Request $request){
+
+        $request->validate([
+            'title' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'year_built' => 'required',
+            'bedroom_id' => 'required',
+            'bathroom_id' => 'required',
+            'parkingspace_id' => 'required',
+            'area' => 'required',
+            'stories' => 'required',
+            'countroom_id' => 'required',
+            'featured_id' => 'required',
+            'status_id' => 'required',
+            'image' => 'required',
+            'images' => 'required',
+            'agent_id' => 'required',
+            'amenity_id' => 'required',
+            'explore_id' => 'required',
+        ]);
 
         $creator_id = Auth::user()->id;
 
@@ -311,11 +332,33 @@ class PropertyController extends Controller
     }
 
     ////////////////////////////////////////////
-        ////// add property method for agent
+    ////// add property method for agent
     ////////////////////////////////////////////
 
 
     public function propertyfromagentadd(Request $request){
+
+        $request->validate([
+            'title' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'year_built' => 'required',
+            'bedroom_id' => 'required',
+            'bathroom_id' => 'required',
+            'parkingspace_id' => 'required',
+            'area' => 'required',
+            'stories' => 'required',
+            'countroom_id' => 'required',
+            'featured_id' => 'required',
+            'status_id' => 'required',
+            'agent_id' => 'required',
+            'color' => 'required',
+            'image' => 'required',
+            'images' => 'required',
+            'amenity_id' => 'required',
+            'explore_id' => 'required',
+        ]);
 
         $creator_id = Auth::user()->id;
 
@@ -395,6 +438,25 @@ class PropertyController extends Controller
     ///////////////////////////////////////////////
 
     public function propertyfromagentupdate(Request $request, $id){
+
+        $request->validate([
+            'title' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'year_built' => 'required',
+            'bedroom_id' => 'required',
+            'bathroom_id' => 'required',
+            'parkingspace_id' => 'required',
+            'area' => 'required',
+            'stories' => 'required',
+            'countroom_id' => 'required',
+            'featured_id' => 'required',
+            'status_id' => 'required',
+            'agent_id' => 'required',
+            'amenity_id' => 'required',
+            'explore_id' => 'required',
+        ]);
 
         $creator_id = Auth::user()->id;
 

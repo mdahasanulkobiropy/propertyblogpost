@@ -33,7 +33,7 @@ class Property extends Model
     }
     public function getParkingspaceNumber(){
 
-        return $this->hasOne(PropertyCountroom::class, 'id', 'parkingspace_id');
+        return $this->hasOne(PropertyParkingspace::class, 'id', 'parkingspace_id');
     }
 
     public function getAgentProperty(){

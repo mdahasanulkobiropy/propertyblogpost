@@ -14,7 +14,7 @@
                         <ul class="pxp-nav-sub rounded-lg">
                             <li><a href="{{route('properties.frontend')}}">All Properties</a></li>
                             {{-- <li><a href="{{route('singleproperty.frontend')}}">Single Property</a></li> --}}
-                            <li><a href="{{route('submitproperty.frontend')}}">Submit New Property</a></li>
+                            {{-- <li><a href="{{route('submitproperty.frontend')}}">Submit New Property</a></li> --}}
                         </ul>
                     </li>
                     <li class="list-inline-item">

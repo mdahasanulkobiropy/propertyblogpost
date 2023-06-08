@@ -13,17 +13,27 @@
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="title" class="form-label">Amenity Title</label>
-                                    <input type="text" class="form-control" name="title" placeholder="Enter Amenity title">
+                                    <input type="text" class="form-control" value="{{old('title')}}" name="title" placeholder="Enter Amenity title">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('icon_class')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="icon_class" class="form-label">Amenity Icon</label>
-                                    <input type="text" class="form-control" name="icon_class" placeholder="Enter Amenity Icon">
+                                    <input type="text" class="form-control"  value="{{old('icon_class')}}" name="icon_class" placeholder="Enter Amenity Icon">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-12 mt-3">
-                            <button type="submit" class="btn btn-success ">Add</button>
+                            <button type="submit" class="btn btn-info ">Add</button>
                         </div>
                     </form>
                 </div><!--end row-->

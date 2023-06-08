@@ -19,7 +19,7 @@ class PropertyParkingspaceController extends Controller
     public function add(Request $request){
 
         $request->validate([
-            'parkingspace' => 'unique:property_parkingspaces,parkingspace'
+            'parkingspace' => 'required|unique:property_parkingspaces,parkingspace'
         ]);
 
         $parkingspace = PropertyParkingspace::create($request->except('_token'));
@@ -38,20 +38,13 @@ class PropertyParkingspaceController extends Controller
      // update method parkingspace
     public function update(Request $request, $id){
 
-
+        $request->validate([
+            'parkingspace' => 'required|unique:property_parkingspaces,parkingspace,'.$id,
+        ]);
 
         $parkingspace = PropertyParkingspace::find($id);
-        if($request->parkingspace == $parkingspace->parkingspace){
-            $parkingspace->update($request->except('token'));
-        }
 
-        else{
-            $request->validate([
-                'parkingspace' => 'unique:property_parkingspaces,parkingspace'
-            ]);
-
-            $parkingspace->update($request->except('token'));
-        }
+        $parkingspace->update($request->except('token'));
 
         return to_route('admin.parkingspace');
     }

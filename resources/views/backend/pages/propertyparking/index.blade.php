@@ -12,11 +12,11 @@
                         @csrf
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
-                                <div class="mb-3 text-center">
+                                <div class="mb-3">
                                     @error('parkingspace')
-                                       <p class="alert-danger">{{$message}}</p>
+                                        <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                 </div>
+                                </div>
                                 <div class="mb-3">
                                     <label for="parkingspace" class="form-label">Parking Space</label>
                                     <input type="text" class="form-control" name="parkingspace" placeholder="Enter Parking Space Number">

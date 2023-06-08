@@ -22,10 +22,28 @@ class AgentController extends Controller
         $agentusers = User::where('role', '=', 'agent')->get();
         return view('backend.pages.agent.index', compact('agentusers'));
     }
-//////////////////////////////////////////
+    //////////////////////////////////////////
     //agent add/store method for admin//
-//////////////////////////////////////////
+    //////////////////////////////////////////
     public function add(Request $request){
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users,email',
+            'password' => 'required|min:8',
+            'license' => 'required',
+            'phone' => 'required',
+            'image' => 'required',
+            'about' => 'required',
+            'part1' => 'required',
+            'part2' => 'required',
+            'part3' => 'required',
+            'facebook' => 'required',
+            'twitter' => 'required',
+            'pinterest' => 'required',
+            'instagram' => 'required',
+        ]);
+
 
         $creator_id = Auth::user()->id;
 
@@ -83,6 +101,21 @@ class AgentController extends Controller
         //agent update method for admin//
     ////////////////////////////////////////
     public function update(Request $request, $id){
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users,email',
+            'license' => 'required',
+            'phone' => 'required',
+            'about' => 'required',
+            'part1' => 'required',
+            'part2' => 'required',
+            'part3' => 'required',
+            'facebook' => 'required',
+            'twitter' => 'required',
+            'pinterest' => 'required',
+            'instagram' => 'required',
+        ]);
 
         ///agent user table
         $agentasuser = User::find($id);
@@ -197,6 +230,8 @@ class AgentController extends Controller
     ///////////////////////////////////////
     public function userbecomeagentapply(Request $request){
 
+
+
         $request->validate([
             'license' => 'required',
             'phone' => 'required',
@@ -209,6 +244,8 @@ class AgentController extends Controller
             'twitter' => 'required',
             'pinterest' => 'required',
             'instagram' => 'required',
+
+
         ]);
 
         $user_id = Auth::user()->id;
@@ -216,7 +253,15 @@ class AgentController extends Controller
         $agent = new Agent();
 
         $agent = new Agent();
-        $agent->agent_id = $user_id;
+        if(Agent::where('agent_id', $user_id)->exists()){
+
+            $agent_iderror = 'You Already Apply For Agent!';
+            return to_route('user.becomeagent', compact('agent_iderror'));
+        }
+        else{
+
+            $agent->agent_id = $user_id;
+        }
         $agent->license = $request->license;
         $agent->phone = $request->phone;
         $agent->about = $request->about;

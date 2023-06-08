@@ -12,6 +12,11 @@
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('parkingspace')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="parkingspace" class="form-label">Parking Space Number</label>
                                     <input type="text" class="form-control" name="parkingspace" value="{{$parkingspace->parkingspace}}" >
                                 </div>

@@ -9,7 +9,7 @@
             </div>
             <div class="pxp-content-side pxp-content-left pxp-half">
                 <div class="pxp-content-side-wrapper">
-                    <form action="" method="get">
+                    <form action="{{route('properties.frontend')}}" method="get">
                         <div class="d-flex">
                             <div class="pxp-content-side-search-form">
                                 <div class="row pxp-content-side-search-form-row">

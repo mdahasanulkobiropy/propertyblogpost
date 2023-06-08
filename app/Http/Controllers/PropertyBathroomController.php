@@ -20,7 +20,7 @@ class PropertyBathroomController extends Controller
     public function add(Request $request){
 
         $request->validate([
-            'bathroom' => 'unique:property_bathrooms,bathroom'
+            'bathroom' => 'required|unique:property_bathrooms,bathroom',
         ]);
 
         $bathroom = PropertyBathroom::create($request->except('_token'));
@@ -39,20 +39,12 @@ class PropertyBathroomController extends Controller
      // update method bathroom
     public function update(Request $request, $id){
 
-
+        $request->validate([
+            'bathroom' => 'required|unique:property_bathrooms,bathroom,'.$id,
+        ]);
 
         $bathroom = PropertyBathroom::find($id);
-        if($request->bathroom == $bathroom->bathroom){
-            $bathroom->update($request->except('token'));
-        }
-
-        else{
-            $request->validate([
-                'bathroom' => 'unique:property_bathrooms,bathroom'
-            ]);
-
-            $bathroom->update($request->except('token'));
-        }
+        $bathroom->update($request->except('token'));
 
         return to_route('admin.bathroom');
     }
@@ -65,4 +57,3 @@ class PropertyBathroomController extends Controller
         return to_route('admin.bathroom');
     }
 }
- 

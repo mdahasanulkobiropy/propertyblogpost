@@ -93,7 +93,7 @@
                         <div class="col-sm-12 col-lg-10">
                             <div class="pxp-agent-block">
                                 <div class="pxp-agent-comments">
-                                    <h4>{{count($agent->getAgent->getComment)}} Reviews</h4>
+                                    {{-- <h4>{{count($agent->getAgent->getComment)}} Reviews</h4> --}}
 
                                         <div id="singleagentcommentallupdate" class="mt-3 mt-md-4">
                                             @include('frontend.pages.agents.agentcomment')

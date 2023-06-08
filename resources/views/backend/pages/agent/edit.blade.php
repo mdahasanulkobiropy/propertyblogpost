@@ -14,10 +14,20 @@
 
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('name')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="name" class="form-label">Agent name</label>
                                     <input type="text" class="form-control" name="name"  value="{{$agentuser->name}}" >
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('email')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="email" class="form-label">Agent Email</label>
                                     <input type="email" class="form-control" name="email"  value="{{$agentuser->email}}" >
                                 </div>
@@ -28,14 +38,29 @@
                                 </div>
 
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('license')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="license" class="form-label">Agent License</label>
                                     <input type="text" class="form-control" name="license"  value="{{$agentuser->getAgent->license}}" >
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('phone')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="phone" class="form-label">Agent Phone Number</label>
                                     <input type="phone" class="form-control" name="phone" value="{{$agentuser->getAgent->phone}}" >
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('about')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="about" class="form-label">Agent About</label>
                                     <textarea class="form-control" name="about" rows="3">{{$agentuser->getAgent->about}}</textarea>
                                 </div>
@@ -48,14 +73,29 @@
                                     <label for="image" class="form-label">Agent Specialities</label>
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('part1')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="part1" class="form-label">Part-1</label>
                                     <input type="text"  class="form-control" name="part1" value="{{$agentuser->getAgent->part1}}">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('part2')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="part2" class="form-label">Part-2</label>
                                     <input type="text"  class="form-control" name="part2"  value="{{$agentuser->getAgent->part2}}">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('part3')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="part3" class="form-label">Part-3</label>
                                     <input type="text"  class="form-control" name="part3"  value="{{$agentuser->getAgent->part3}}">
                                 </div>
@@ -63,12 +103,32 @@
                                 <div class="mb-3">
                                     <label for="social" class="form-label mb-3">Agent Social Media Link:</label>
                                     <br>
+                                    <div class="mb-3">
+                                        @error('facebook')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="facebook" class="form-label">Facebook</label>
                                     <input type="text"  class="form-control" name="facebook"  value="{{$agentuser->getAgent->facebook}}">
-                                    <label for="twitter" class="form-label mt-4">Twitter</label>
+                                    <div class="mb-3">
+                                        @error('twitter')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <label for="pinterest" class="form-label mt-4">Twitter</label>
                                     <input type="text"  class="form-control" name="twitter" value="{{$agentuser->getAgent->twitter}}">
+                                    <div class="mb-3">
+                                        @error('twitter')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="pinterest" class="form-label mt-4">Pinterest</label>
                                     <input type="text"  class="form-control" name="pinterest" value="{{$agentuser->getAgent->pinterest}}">
+                                    <div class="mb-3">
+                                        @error('instagram')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="instagram" class="form-label mt-4">Instagram</label>
                                     <input type="text"  class="form-control" name="instagram" value="{{$agentuser->getAgent->instagram}}">
                                 </div>

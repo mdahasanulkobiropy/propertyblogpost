@@ -13,49 +13,83 @@
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    @error('title')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
                                     <label for="title" class="form-label">Property Title</label>
                                     <input type="text" class="form-control" name="title" value="{{$property->title}}" >
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('location')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="location" class="form-label">Poterty Location</label>
                                     <input type="text" class="form-control" name="location" value="{{$property->location}}">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('description')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="description" class="form-label">Property Description</label>
-                                    <textarea class="form-control" name="description" rows="3">value="{{$property->description}}"</textarea>
+                                    <textarea class="form-control" name="description" rows="3">{{$property->description}}</textarea>
                                 </div>
 
                                 <div class="col-md-8">
                                     <label for="color" class="form-label">Color</label>
-                                    <input type="color" class="form-control" name="color">
+                                    <input type="color" class="form-control" value="{{$property->color}}" name="color">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('image')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="image" class="form-label">Property Thumbnail Image</label>
                                     <input type="file"  class="form-control" name="image">
                                 </div>
                                 <div class="mb-3">
-                                   <img src="{{asset('backend/upload/image/property')}}/{{$property->image}}" height="80" width="80" alt="" srcset="">
+                                    <img src="{{asset('backend/upload/image/property')}}/{{$property->image}}" height="80" width="80" alt="" srcset="">
                                 </div>
                                 <div class="mb-3">
-                                <label for="images" class="form-label">Property Other Images</label>
-                                <input type="file"  class="form-control" name="images[]"  multiple>
+                                    <div class="mb-3">
+                                        @error('images')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <label for="images" class="form-label">Property Other Images</label>
+                                    <input type="file"  class="form-control" name="images[]"  multiple>
                                 </div>
                                 @foreach ($property->getImages as $images)
-
-                                <div class="mb-3">
-                                    <img src="{{asset('backend/upload/image/property')}}/{{$images->images}}" height="80" width="80" alt="" srcset="">
-                                 </div>
+                                    <div class="mb-3">
+                                        <img src="{{asset('backend/upload/image/property')}}/{{$images->images}}" height="80" width="80" alt="" srcset="">
+                                    </div>
                                 @endforeach
                             </div>
-                            </div>
-                            <div class="col-lg-12">
+                        </div>
+                        <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="row g-3">
                                     <div class="col-md-8">
+                                        <div class="mb-3">
+                                            @error('price')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
                                         <label for="price" class="form-label">Property Price</label>
                                         <input type="text" class="form-control" name="price" value="{{$property->price}}">
                                     </div>
                                     <div class="col-md-8">
+                                        <div class="mb-3">
+                                            @error('year_built')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
                                         <label for="year_built" class="form-label">Year Built</label>
                                         <input type="text" class="form-control" name="year_built" value="{{$property->year_built}}">
                                     </div>
@@ -82,7 +116,7 @@
                                         <select class="form-select" name="countroom_id">
                                             <option>--select--</option>
                                             @foreach ($countrooms as $countroom)
-                                                <option {{$property->getCountroomNumber()->where('id', $countroom->id)->exists() ? 'selected' : ''}} value="{{$countroom->id}}">{{$countroom->countroom}}</option>
+                                            <option {{$property->getCountroomNumber()->where('id', $countroom->id)->exists() ? 'selected' : ''}} value="{{$countroom->id}}">{{$countroom->countroom}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -95,11 +129,16 @@
                                         <select class="form-select" name="parkingspace_id">
                                             <option>--select--</option>
                                             @foreach ($parkingspaces as $parkingspace)
-                                                <option {{$property->getParkingspaceNumber()->where('id', $parkingspace->id)->exists() ? 'selected' : ''}} value="{{$parkingspace->id}}">{{$parkingspace->parkingspace}}</option>
+                                            <option {{$property->getParkingspaceNumber()->where('id', $parkingspace->id)->exists() ? 'selected' : ''}} value="{{$parkingspace->id}}">{{$parkingspace->parkingspace}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="col-md-8">
+                                        <div class="mb-3">
+                                            @error('area')
+                                                <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
                                         <label for="area" class="form-label">Area spaces</label>
                                         <input type="text" class="form-control" name="area" value="{{$property->area}}">
                                     </div>

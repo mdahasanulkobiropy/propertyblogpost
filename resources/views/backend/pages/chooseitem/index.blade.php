@@ -13,28 +13,58 @@
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="title" class="form-label">Choose Item Title</label>
-                                    <input type="text" class="form-control" name="title" placeholder="Title">
+                                    <input type="text" class="form-control" value="{{old('title')}}" name="title" placeholder="Title">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('sub_title_part1')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="sub_title_part1" class="form-label">ChooseItem Sub_Title Par1</label>
-                                    <input type="text" class="form-control" name="sub_title_part1" placeholder="Sub Title 1" >
+                                    <input type="text" class="form-control" value="{{old('sub_title_part1')}}" name="sub_title_part1" placeholder="Sub Title 1" >
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('sub_title_part2')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="sub_title_part2" class="form-label">ChooseItem Sub_Title Par2</label>
-                                    <input type="text" class="form-control" name="sub_title_part2" placeholder="Sub Title 2">
+                                    <input type="text" class="form-control" value="{{old('sub_title_part2')}}" name="sub_title_part2" placeholder="Sub Title 2">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('button_text')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="button_text" class="form-label">ChooseItem Button_text</label>
-                                    <input type="text" class="form-control" name="button_text" placeholder="Button Text">
+                                    <input type="text" class="form-control" value="{{old('button_text')}}" name="button_text" placeholder="Button Text">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('image')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="image" class="form-label">Choose Item Image</label>
                                     <input type="file" class="form-control" name="image">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('route')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="route" class="form-label">Choose Item Route</label>
-                                    <input type="text" class="form-control" name="route">
+                                    <input type="text" class="form-control" value="{{old('route')}}" name="route">
                                 </div>
 
 

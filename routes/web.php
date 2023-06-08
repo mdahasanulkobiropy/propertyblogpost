@@ -55,7 +55,7 @@ Route::get('/', [FrontendController::class, 'index'])->name('index.frontend');
     //property part frontend
 /////////////////////////////////
 Route::get('/properties', [FrontendController::class, 'properties'])->name('properties.frontend');
-Route::get('/property/submit', [FrontendController::class, 'submitproperty'])->name('submitproperty.frontend');
+// Route::get('/property/submit', [FrontendController::class, 'submitproperty'])->name('submitproperty.frontend');
 Route::get('/property/single/{id}', [FrontendController::class, 'singleproperty'])->name('singleproperty.frontend');
 ////////////////////////
 //agent part frontend

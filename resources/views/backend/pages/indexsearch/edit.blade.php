@@ -13,14 +13,29 @@
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="title" class="form-label">Index Search Title</label>
                                     <input type="text" class="form-control" name="title" value="{{$indexsearch->title}}">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('sub_title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="sub_title" class="form-label">Index Search Sub Title</label>
                                     <input type="text" class="form-control" name="sub_title" value="{{$indexsearch->sub_title}}" >
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('button_text')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="button_text" class="form-label">Index Search Button Text</label>
                                     <input type="text" class="form-control" name="button_text" value="{{$indexsearch->button_text}}">
                                 </div>

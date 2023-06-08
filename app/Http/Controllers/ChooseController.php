@@ -29,6 +29,11 @@ class ChooseController extends Controller
 
     public function update(Request $request, $id){
 
+        $request->validate([
+            'title' => 'required',
+            'sub_Title' => 'required',
+            'button_text' => 'required',
+        ]);
 
         $choose = Choose::find($id);
 

@@ -20,6 +20,10 @@ class StatusController extends Controller
     //status store/add method
     public function add(Request $request){
 
+        $request->validate([
+            'title' => 'required|unique:featureds,title',
+        ]);
+
         $status = new Status();
 
         $status->title = $request->title;
@@ -38,6 +42,11 @@ class StatusController extends Controller
     }
 
     public function update(Request $request, $id){
+
+        $request->validate([
+
+            'title' => 'required|unique:statuses,title,'. $id,
+        ]);
 
         $status = Status::find($id);
 

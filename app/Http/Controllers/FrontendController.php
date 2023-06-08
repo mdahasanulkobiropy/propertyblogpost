@@ -46,6 +46,7 @@ class FrontendController extends Controller
     }
     public function properties(Request $request){
 
+
         // dd($request->input('amenty_id'));
         $search_price_min = $request['price_min'] ?? '';
         $search_price_max = $request['price_max'] ?? '';

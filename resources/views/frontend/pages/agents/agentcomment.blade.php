@@ -1,3 +1,5 @@
+<h4 class="mb-5">{{count($agent->getAgent->getComment)}} Reviews</h4>
+
 @foreach ($agent->getAgent->getComment as $comment)
 
     <div class="media">

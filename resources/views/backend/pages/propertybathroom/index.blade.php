@@ -12,14 +12,14 @@
                         @csrf
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
-                                <div class="mb-3 text-center">
-                                   @error('bathroom')
-                                      <p class="alert-danger">{{$message}}</p>
-                                   @enderror
+                                <div class="mb-3">
+                                    @error('bathroom')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="bathroom" class="form-label">Bath Room Number</label>
-                                    <input type="text" class="form-control" name="bathroom" placeholder="Enter Bath Room Number">
+                                    <input type="text" class="form-control" value="{{old('bathroom')}}" name="bathroom" placeholder="Enter Bath Room Number">
                                 </div>
                             </div>
                         </div>

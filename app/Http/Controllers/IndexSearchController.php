@@ -27,6 +27,13 @@ class IndexSearchController extends Controller
     //edit method indexsearch
     public function update(Request $request, $id){
 
+        $request->validate([
+            'title' => 'required',
+            'sub_title' => 'required',
+            'button_text' => 'required',
+        ]);
+
+
         $indexsearch = IndexSearch::find($id);
         $indexsearch->update($request->except('_token'));
 

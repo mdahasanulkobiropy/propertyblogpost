@@ -19,7 +19,7 @@ class PropertyCountroomController extends Controller
     public function add(Request $request){
 
         $request->validate([
-            'countroom' => 'unique:property_countrooms,countroom'
+            'countroom' => 'required|unique:property_countrooms,countroom'
         ]);
 
         $countroom = PropertyCountroom::create($request->except('_token'));
@@ -38,20 +38,15 @@ class PropertyCountroomController extends Controller
      // update method countroom
     public function update(Request $request, $id){
 
-
+        $request->validate([
+            'bedroom' => 'required|unique:property_countrooms,countroom,'. $id,
+        ]);
 
         $countroom = PropertyCountroom::find($id);
-        if($request->countroom == $countroom->countroom){
-            $countroom->update($request->except('token'));
-        }
 
-        else{
-            $request->validate([
-                'countroom' => 'unique:property_countrooms,countroom'
-            ]);
+        $countroom->update($request->except('token'));
 
-            $countroom->update($request->except('token'));
-        }
+
 
         return to_route('admin.countroom');
     }

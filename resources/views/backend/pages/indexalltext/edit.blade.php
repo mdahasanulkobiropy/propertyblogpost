@@ -1,7 +1,6 @@
 @extends('backend.master.master')
 
     @section('content')
-
         <div class="card">
             <div class="card-body p-4">
                 <h5 class="card-title">Update Index All Text</h5>
@@ -13,31 +12,59 @@
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('property_title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="property_title" class="form-label">Property Title</label>
                                     <input type="text" class="form-control" name="property_title" value="{{$indexalltext->property_title}}">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('property_sub_title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="property_sub_title" class="form-label">Property Sub Title</label>
                                     <input type="text" class="form-control" name="property_sub_title" value="{{$indexalltext->property_sub_title}}" >
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('property_button_text')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="property_button_text" class="form-label">Property Button Text</label>
                                     <input type="text" class="form-control" name="property_button_text" value="{{$indexalltext->property_button_text}}">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('agent_title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="agent_title" class="form-label">Property Title</label>
                                     <input type="text" class="form-control" name="agent_title" value="{{$indexalltext->agent_title}}">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('agent_sub_title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="agent_sub_title" class="form-label">Property Sub Title</label>
                                     <input type="text" class="form-control" name="agent_sub_title" value="{{$indexalltext->agent_sub_title}}" >
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('agent_button_text')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="agent_button_text" class="form-label">Property Button Text</label>
                                     <input type="text" class="form-control" name="agent_button_text" value="{{$indexalltext->agent_button_text}}">
                                 </div>
-
-
                             </div>
                         </div>
                         <div class="col-lg-12 mt-3">

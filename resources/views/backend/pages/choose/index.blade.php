@@ -28,7 +28,7 @@
 
                         @empty
 
-                            <tr>There is No Amenity .</tr>
+                            <tr>There is No Choose .</tr>
 
                         @endforelse
                     </table>

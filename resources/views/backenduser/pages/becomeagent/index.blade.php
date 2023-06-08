@@ -14,49 +14,100 @@
 
                             <div class="border border-3 p-4 rounded">
 
+                                <div class="mb-3 ">
+                                    @error('license')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <div class="mb-3">
                                     <label for="license" class="form-label">Agent License*</label>
-                                    <input type="text" class="form-control" name="license"  placeholder="Enter Agent license">
+                                    <input type="text" class="form-control" name="license" value="{{old('license')}}"  placeholder="Enter Agent license">
+                                </div>
+                                <div class="mb-3 ">
+                                    @error('phone')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Agent Phone Number*</label>
-                                    <input type="phone" class="form-control" name="phone"  placeholder="Agent Phone">
+                                    <input type="phone" class="form-control" name="phone" value="{{old('phone')}}"  placeholder="Agent Phone">
+                                </div>
+                                <div class="mb-3 ">
+                                    @error('about')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="about" class="form-label">Agent About*</label>
-                                    <textarea class="form-control" name="about" rows="3"></textarea>
+                                    <textarea class="form-control" name="about" rows="3">{{old('about')}}</textarea>
+                                </div>
+                                <div class="mb-3 ">
+                                    @error('image')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="image" class="form-label">Agent Images*</label>
-                                    <input type="file"  class="form-control" name="image">
+                                    <input type="file"  class="form-control"  name="image">
                                 </div>
                                 <div class="mb-3">
                                     <label for="image" class="form-label">Agent Specialities</label>
                                 </div>
+                                <div class="mb-3 ">
+                                    @error('part1')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <div class="mb-3">
                                     <label for="part1" class="form-label">Part-1*</label>
-                                    <input type="text"  class="form-control" name="part1">
+                                    <input type="text"  class="form-control" value="{{old('part1')}}" name="part1">
+                                </div>
+                                <div class="mb-3 ">
+                                    @error('part2')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="part2" class="form-label">Part-2*</label>
-                                    <input type="text"  class="form-control" name="part2">
+                                    <input type="text"  class="form-control" value="{{old('part2')}}" name="part2">
+                                </div>
+                                <div class="mb-3 ">
+                                    @error('part3')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="part3" class="form-label">Part-3*</label>
-                                    <input type="text"  class="form-control" name="part3">
+                                    <input type="text"  class="form-control" value="{{old('part3')}}" name="part3">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="social" class="form-label mb-3">Agent Social Media Link:</label>
                                     <br>
+
                                     <label for="facebook" class="form-label">Facebook*</label>
-                                    <input type="text"  class="form-control" name="facebook">
+                                    @error('facebook')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    <input type="text"  class="form-control" value="{{old('facebook')}}" name="facebook">
+
                                     <label for="twitter" class="form-label mt-4">Twitter*</label>
-                                    <input type="text"  class="form-control" name="twitter">
+                                    @error('twitter')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    <input type="text"  class="form-control" value="{{old('twitter')}}" name="twitter">
+
                                     <label for="pinterest" class="form-label mt-4">Pinterest*</label>
-                                    <input type="text"  class="form-control" name="pinterest">
+                                    @error('pinterest')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    <input type="text"  class="form-control" value="{{old('pinterest')}}" name="pinterest">
+
                                     <label for="instagram" class="form-label mt-4">Instagram*</label>
-                                    <input type="text"  class="form-control" name="instagram">
+                                    @error('instagram')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    <input type="text"  class="form-control" value="{{old('instagram')}}" name="instagram">
                                 </div>
                                 <div class="mb-3">
                                     <div >

@@ -11,26 +11,56 @@
                     <div class="col-lg-12">
                         <div class="border border-3 p-4 rounded">
                             <div class="mb-3">
+                                <div class="mb-3">
+                                    @error('title')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <label for="title" class="form-label">Choose Title</label>
                                 <input type="text" class="form-control" name="title" value="{{$chooseitem->title}}" >
                             </div>
                             <div class="mb-3">
+                                <div class="mb-3">
+                                    @error('sub_title_part1')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <label for="sub_title_part1" class="form-label">ChooseItem Sub_Title Par1</label>
                                 <input type="text" class="form-control" name="sub_title_part1" value="{{$chooseitem->sub_title_part1}}">
                             </div>
                             <div class="mb-3">
+                                <div class="mb-3">
+                                    @error('sub_title_part2')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <label for="sub_title_part2" class="form-label">ChooseItem Sub_Title Par2</label>
                                 <input type="text" class="form-control" name="sub_title_part2" value="{{$chooseitem->sub_title_part2}}">
                             </div>
                             <div class="mb-3">
+                                <div class="mb-3">
+                                    @error('button_text')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <label for="button_text" class="form-label">ChooseItem Button_text</label>
                                 <input type="text" class="form-control" name="button_text" value="{{$chooseitem->button_text}}">
                             </div>
                             <div class="mb-3">
+                                <div class="mb-3">
+                                    @error('route')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <label for="route" class="form-label">ChooseItem route</label>
                                 <input type="text" class="form-control" name="route" value="{{$chooseitem->route}}">
                             </div>
                             <div class="mb-3">
+                                <div class="mb-3">
+                                    @error('route')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
                                 <label for="image" class="form-label">Choose Image</label>
                                 <input type="file" class="form-control" name="image">
                             </div>

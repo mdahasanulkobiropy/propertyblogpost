@@ -36,7 +36,8 @@
                     <P class="from-control">{{$property->button_text}} </P>
                 </div>
                 <div class="col-11 mt-3">
-                    <a class="btn btn-warning" href="{{route('admin.property.approvesure', $property->id)}}">Approve</a>
+                    <a class="btn btn-warning" href="{{route('admin.poterty.edit', $property->id)}}">E d i t</a>
+                    <a class="btn btn-danger"  href="{{route('admin.poterty.delete', $property->id)}}">Delete</a>
                 </div>
 
             </div>

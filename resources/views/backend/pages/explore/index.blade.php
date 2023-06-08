@@ -13,13 +13,18 @@
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="title" class="form-label">Explore Title</label>
-                                    <input type="text" class="form-control" name="title" placeholder="Enter explore title">
+                                    <input type="text" class="form-control" value="{{old('title')}}" name="title" placeholder="Enter explore title">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-12 mt-3">
-                            <button type="submit" class="btn btn-success ">Add</button>
+                            <button type="submit" class="btn btn-info ">Add</button>
                         </div>
                     </form>
                 </div><!--end row-->

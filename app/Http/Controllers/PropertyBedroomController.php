@@ -19,7 +19,7 @@ class PropertyBedroomController extends Controller
     public function add(Request $request){
 
         $request->validate([
-            'bedroom' => 'unique:property_bedrooms,bedroom'
+            'bedroom' => 'required|unique:property_bedrooms,bedroom',
         ]);
 
         $bedroom = PropertyBedroom::create($request->except('_token'));
@@ -38,24 +38,15 @@ class PropertyBedroomController extends Controller
      // update method bedroom
     public function update(Request $request, $id){
 
+        $request->validate([
+            'bedroom' => 'required|unique:property_bedrooms,bedroom,'. $id,
+        ]);
+
         $bedroom = PropertyBedroom::find($id);
-
-        if($request->bedroom == $bedroom->bedroom){
-
-            $bedroom->update($request->except('token'));
-        }
-
-        else{
-
-            $request->validate([
-                'bedroom' => 'unique:property_bedrooms,bedroom'
-            ]);
-
-            $bedroom->update($request->except('token'));
-        }
-
+        $bedroom->update($request->except('token'));
 
         return to_route('admin.bedroom');
+
     }
 
     public function delete($id){
