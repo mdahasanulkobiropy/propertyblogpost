@@ -13,13 +13,18 @@
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('name')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="name" class="form-label">Blog Category Name</label>
                                     <input type="text" class="form-control" name="name" placeholder="Enter blog category">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-12 mt-3">
-                            <button type="submit" class="btn btn-success ">Add</button>
+                            <button type="submit" class="btn btn-info">Add</button>
                         </div>
                     </form>
                 </div><!--end row-->

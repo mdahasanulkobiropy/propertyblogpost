@@ -26,6 +26,14 @@ class AgentTextController extends Controller
     //update method agenttext
     public function update(Request $request, $id){
 
+        $request->validate([
+            'title' => 'required',
+            'sub_title' => 'required',
+            'find_title' => 'required',
+            'name' => 'required',
+            'location' => 'required',
+        ]);
+
         $agenttext = AgentText::find($id);
         $agenttext->update($request->except('_token'));
 

@@ -32,6 +32,14 @@ class ContactController extends Controller
 
     public function update(Request $request, $id){
 
+        $request->validate([
+            'title' => 'required',
+            'sub_title' => 'required',
+            'office_title' => 'required',
+            'massage_title' => 'required',
+            'map_title' => 'required',
+        ]);
+
         $contact = Contact::find($id);
 
         $contact->update($request->except('_token'));

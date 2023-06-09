@@ -19,7 +19,9 @@ class BlogCategoryController extends Controller
 
     public function add(Request $request){
 
-
+        $request->validate([
+            'name' => 'required|unique:blog_categories,name',
+        ]);
 
         $blogcategory = BlogCategory::create($request->except('_token'));
 
@@ -38,6 +40,10 @@ class BlogCategoryController extends Controller
 
      // update method blogcategory
     public function update(Request $request, $id){
+
+        $request->validate([
+            'name' => 'required|unique:blog_categories,name,'.$id,
+        ]);
 
         $blogcategory = BlogCategory::find($id);
 

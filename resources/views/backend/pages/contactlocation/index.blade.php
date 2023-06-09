@@ -13,24 +13,49 @@
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('city_name')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="title" class="form-label">City Name:</label>
-                                    <input type="text" class="form-control" name="city_name" placeholder="Enter City Name">
+                                    <input type="text" class="form-control" value="{{old('city_name')}}" name="city_name" placeholder="Enter City Name">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('floor_position')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="title" class="form-label">Floor Position:</label>
-                                    <input type="text" class="form-control" name="floor_position" placeholder="Enter floor position">
+                                    <input type="text" class="form-control"  value="{{old('floor_position')}}" name="floor_position" placeholder="Enter floor position">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('location')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="title" class="form-label">Bulding Location:</label>
-                                    <input type="text" class="form-control" name="location" placeholder="Enter location">
+                                    <input type="text" class="form-control"  value="{{old('location')}}" name="location" placeholder="Enter location">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('phone')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="title" class="form-label">Phone Number:</label>
-                                    <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number">
+                                    <input type="text" class="form-control"  value="{{old('phone')}}" name="phone" placeholder="Enter Phone Number">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('email')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="title" class="form-label">Email Address:</label>
-                                    <input type="text" class="form-control" name="email" placeholder="Enter email Address">
+                                    <input type="text" class="form-control" value="{{old('email')}}" name="email" placeholder="Enter email Address">
                                 </div>
                             </div>
                         </div>

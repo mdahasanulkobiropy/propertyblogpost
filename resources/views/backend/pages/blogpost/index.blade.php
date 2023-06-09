@@ -13,69 +13,139 @@
                         <div class="col-lg-12">
                             <div class="border border-3 p-4 rounded">
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="title" class="form-label">Blog Post Title</label>
                                     <input type="text" class="form-control" name="title" placeholder="Enter blog Post Title">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('image')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="title" class="form-label">Blog Post Image</label>
                                     <input type="file" class="form-control" name="image">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('middle_title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="middle_title" class="form-label">Blog Post Middle Title</label>
                                     <input type="text" class="form-control" name="middle_title" placeholder="Enter blog Post Middle Title">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('middle_des1')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="middle_des1" class="form-label">Blog Post Middle Des1 </label>
                                     <input type="text" class="form-control" name="middle_des1" placeholder="Enter blog Post description 1">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('middle_des2')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="middle_des2" class="form-label">Blog Post Middle Des2 </label>
                                     <input type="text" class="form-control" name="middle_des2" placeholder="Enter blog Post description 2">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('middle_url')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="middle_url" class="form-label">Blog Post Middle Url </label>
                                     <input type="text" class="form-control" name="middle_url" placeholder="Enter blog Post Url">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('next_middle_title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="next_middle_title" class="form-label">Blog Post Next Middle Title</label>
                                     <input type="text" class="form-control" name="next_middle_title" placeholder="Enter blog Post Middle Title">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('next_middle_des1')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="next_middle_des1" class="form-label">Blog Post Next Middle Des1 </label>
                                     <input type="text" class="form-control" name="next_middle_des1" placeholder="Enter blog Post description 1">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('next_middle_des2')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="next_middle_des2" class="form-label">Blog Post Next Middle Des2 </label>
                                     <input type="text" class="form-control" name="next_middle_des2" placeholder="Enter blog Post description 2">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('next_middle_des3')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="next_middle_des3" class="form-label">Blog Post Next Middle Des3 </label>
                                     <input type="text" class="form-control" name="next_middle_des3" placeholder="Enter blog Post Des 3">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('next_middle_des4')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="next_middle_des4" class="form-label">Blog Post Next Middle Des4 </label>
                                     <input type="text" class="form-control" name="next_middle_des4" placeholder="Enter blog Post Des4">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('images')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="images" class="form-label">Blog Post Image</label>
                                     <input type="file" class="form-control" name="images[]" multiple>
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('final_title')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="final_title" class="form-label">Blog Post Final Title </label>
                                     <input type="text" class="form-control" name="final_title" placeholder="Enter blog Post Des4">
                                 </div>
                                 <div class="mb-3">
+                                    <div class="mb-3">
+                                        @error('final_des')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <label for="final_des" class="form-label">Blog Post Final Title </label>
                                     <input type="text" class="form-control" name="final_des" placeholder="Enter blog Post Des4">
                                 </div>
                                 <div class="mb-3">
                                     <label for="blogtag" class="form-label">Blog Tag </label>
-                                   <select name="blogtag_id" class="form-control">
+                                    <select name="blogtag_id" class="form-control">
                                         <option value="">Select</option>
                                         @foreach ($blogtags as $blogtag)
-                                            <option value="{{$blogtag->id}}">{{$blogtag->name}}</option>
+                                        <option value="{{$blogtag->id}}">{{$blogtag->name}}</option>
                                         @endforeach
-                                   </select>
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="blogcategory" class="form-label">Blog Category </label>

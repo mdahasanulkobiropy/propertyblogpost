@@ -17,6 +17,9 @@ class BlogTagController extends Controller
     // add/store method blogtag
 
     public function add(Request $request){
+        $request->validate([
+            'name' => 'required|unique:blog_tags,name',
+        ]);
 
         $blogtag = BlogTag::create($request->except('_token'));
         return back();
@@ -33,6 +36,10 @@ class BlogTagController extends Controller
      // update method blogtag
     public function update(Request $request, $id){
 
+        $request->validate([
+            'name' => 'required|unique:blog_tags,name,'.$id,
+        ]);
+
         $blogtag = BlogTag::find($id);
 
         $blogtag->update($request->except('token'));
@@ -44,7 +51,7 @@ class BlogTagController extends Controller
 
         $blogtag = BlogTag::find($id);
         $blogtag->delete();
-        
+
         return to_route('admin.blogtag');
     }
 }
