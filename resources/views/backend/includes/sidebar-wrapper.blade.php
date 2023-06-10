@@ -12,7 +12,7 @@
 			</div>
 			<!--navigation-->
 			<ul class="metismenu" id="menu">
-				<li>
+				{{-- <li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-home-circle'></i>
 						</div>
@@ -30,7 +30,7 @@
 						<li> <a href="dashboard-human-resources.html"><i class="bx bx-right-arrow-alt"></i>Human Resources</a>
 						</li>
 					</ul>
-				</li>
+				</li> --}}
                 <li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>

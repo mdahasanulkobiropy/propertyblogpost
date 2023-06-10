@@ -24,10 +24,10 @@
                                 <button type="submit" class="pxp-agent-contact-modal-btn">Sign In</button>
                             </div>
                             <div class="form-group mt-4 text-center pxp-modal-small">
-                                <a href="#" class="pxp-modal-link">Forgot password</a>
+                                <a href="{{ route('password.email') }}" class="pxp-modal-link">Forgot password</a>
                             </div>
                             <div class="text-center pxp-modal-small">
-                                New to Resideo? <a href="javascript:void(0);" class="pxp-modal-link pxp-signup-trigger">Create an account</a>
+                                New to Resideo? <a href="{{ route('register') }}" class="pxp-modal-link pxp-signup-trigger">Create an account</a>
                             </div>
                         </form>
                     </div>

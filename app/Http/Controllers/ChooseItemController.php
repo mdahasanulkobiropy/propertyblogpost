@@ -21,7 +21,7 @@ class ChooseItemController extends Controller
             'sub_title_part1' => 'required',
             'sub_title_part2' => 'required',
             'button_text' => 'required',
-            'image' => 'required',
+            'image' => 'required|image',
             'route' => 'required',
         ]);
 

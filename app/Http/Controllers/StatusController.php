@@ -44,7 +44,6 @@ class StatusController extends Controller
     public function update(Request $request, $id){
 
         $request->validate([
-
             'title' => 'required|unique:statuses,title,'. $id,
         ]);
 

@@ -34,7 +34,7 @@
                                 <button type="submit" class="pxp-agent-contact-modal-btn">Sign Up</button>
                             </div>
                             <div class="text-center mt-4 pxp-modal-small">
-                                Already have an account? <a href="javascript:void(0);" class="pxp-modal-link pxp-signin-trigger">Sign in</a>
+                                Already have an account? <a href="{{route('login')}}" class="pxp-modal-link pxp-signin-trigger">Sign in</a>
                             </div>
                         </form>
                     </div>

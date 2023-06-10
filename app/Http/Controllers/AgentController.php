@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Auth;
 class AgentController extends Controller
 {
 
-
+/////////////////////////////////////////
 /////////////////////////////////////////
     //agent index method for admin start//
+//////////////////////////////////////////
 //////////////////////////////////////////
     public function index(){
 
@@ -33,7 +34,7 @@ class AgentController extends Controller
             'password' => 'required|min:8',
             'license' => 'required',
             'phone' => 'required',
-            'image' => 'required',
+            'image' => 'required|image',
             'about' => 'required',
             'part1' => 'required',
             'part2' => 'required',
@@ -235,7 +236,7 @@ class AgentController extends Controller
         $request->validate([
             'license' => 'required',
             'phone' => 'required',
-            'image' => 'required',
+            'image' => 'required|image',
             'about' => 'required',
             'part1' => 'required',
             'part2' => 'required',
@@ -291,6 +292,7 @@ class AgentController extends Controller
     }
 
 
+
     //////////////////////////////////////
     ///////Find agent Approve //////////
     //////////////////////////////////////
@@ -335,6 +337,8 @@ class AgentController extends Controller
        return to_route('admin.confirmagentstatus');
     }
 
+
+    //// agent details method
     public function details($id){
 
         $agent = User::find($id);
